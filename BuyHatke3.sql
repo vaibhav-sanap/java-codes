@@ -1,0 +1,2 @@
+ALTER TABLE UserCount ADD COLUMN `id` INT AUTO_INCREMENT UNIQUE FIRST;
+select year,count - ( case when(uc1.id=1) Then 0 ELSE (select count from UserCount uc2 where uc2.id = uc1.id-1) END)  from UserCount uc1;
